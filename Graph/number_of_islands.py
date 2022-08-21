@@ -20,11 +20,11 @@ def number_of_islands(grid):
 
         while q:
             r, c = q.popleft()
-            directions = [[1,0], [0,1], [-1,0], [0,-1]]
+            directions = [[1,0], [-1,0], [0,1], [0,-1]]
 
             for dr,dc in directions:
                 r,c  = dr + r, dc + c
-                if r in range(rows) and c in range(cols) and (r,c) not in visited:
+                if r in range(rows) and c in range(cols) and (r,c) not in visited and grid[r][c] == 1:
                         q.append((r,c))
                         visited.add((r,c))
 
@@ -37,18 +37,18 @@ def number_of_islands(grid):
     for r in range(rows):
         for c in range(cols):
             if grid[r][c] == 1 and (r,c) not in visited:
-                islands += 1
                 bfs(r,c)
+                islands += 1
                 
 
-        return islands
+    return islands
 
     
 
 
 grid = [
         [1,1,1,0,0],
-        [1,1,0,0,0],
+        [1,1,0,1,1],
         [1,1,0,0,0],
         [0,0,0,1,1]
 ]
