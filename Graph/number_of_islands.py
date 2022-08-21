@@ -27,7 +27,6 @@ def number_of_islands(grid):
                         q.append((r,c))
                         visited.add((r,c))
 
-
     if not grid:
         return 0
 
@@ -47,4 +46,4 @@ grid = [
 ]
 
 print(number_of_islands(grid))
-            
+   
