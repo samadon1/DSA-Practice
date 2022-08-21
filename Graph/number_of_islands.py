@@ -6,7 +6,6 @@
 
 import collections
 
-
 def number_of_islands(grid):
     q = collections.deque()
     visited = set()
@@ -32,25 +31,20 @@ def number_of_islands(grid):
     if not grid:
         return 0
 
-    
-
     for r in range(rows):
         for c in range(cols):
             if grid[r][c] == 1 and (r,c) not in visited:
                 bfs(r,c)
                 islands += 1
-                
-
     return islands
 
     
-
-
 grid = [
         [1,1,1,0,0],
         [1,1,0,1,1],
         [1,1,0,0,0],
         [0,0,0,1,1]
 ]
+
 print(number_of_islands(grid))
             
